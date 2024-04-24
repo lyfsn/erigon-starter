@@ -1,6 +1,11 @@
-../erigon/build/bin/erigon \
+docker run \
+  --rm \
+  -it \
+  -v $(pwd)/execution-data:/execution-data \
+  -v $(pwd)/el-cl-genesis-data:/el-cl-genesis-data \
+  erigon-devnet \
   --log.console.verbosity=3 \
-  --datadir=./execution-data \
+  --datadir=/execution-data \
   --port=30303 \
   --networkid=6480000002 \
   --http.api=eth,erigon,engine,web3,net,debug,trace,txpool,admin,ots \
@@ -12,7 +17,7 @@
   --http.addr=0.0.0.0 \
   --http.corsdomain=* \
   --http.port=8545 \
-  --authrpc.jwtsecret=./el-cl-genesis-data/jwt/jwtsecret \
+  --authrpc.jwtsecret=/el-cl-genesis-data/jwt/jwtsecret \
   --authrpc.addr=0.0.0.0 \
   --authrpc.port=8551 \
   --authrpc.vhosts=* \
