@@ -1,6 +1,7 @@
 docker run \
   --rm \
   -it \
+  --user=root \
   -v $(pwd)/execution-data:/execution-data \
   -v $(pwd)/el-cl-genesis-data:/el-cl-genesis-data \
   erigon-devnet \
