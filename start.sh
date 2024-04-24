@@ -11,6 +11,7 @@ docker run \
   erigon-devnet \
   --log.console.verbosity=3 \
   --datadir=/execution-data \
+  --prune=htrc \
   --port=30303 \
   --networkid=6480000002 \
   --http.api=eth,erigon,engine,web3,net,debug,trace,txpool,admin,ots \
