@@ -4,6 +4,10 @@ docker run \
   --user=root \
   -v $(pwd)/execution-data:/execution-data \
   -v $(pwd)/el-cl-genesis-data:/el-cl-genesis-data \
+  -p 8545:8545 \
+  -p 8551:8551 \
+  -p 30303:30303 \
+  -p 9001:9001 \
   erigon-devnet \
   --log.console.verbosity=3 \
   --datadir=/execution-data \
